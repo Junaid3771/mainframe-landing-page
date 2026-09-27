@@ -1,6 +1,8 @@
 # Mainframe — Independent creative studio
 
-A complete responsive React + TypeScript studio website, built with Vite. The design combines charcoal, warm ivory, electric green, expressive typography, and locally generated CSS artwork. There are no runtime font, image, video, analytics, or AI-service dependencies.
+A complete responsive React + TypeScript studio website, built with Vite. The original red, character-led A.R.I.A. landing screen, boy video, pointer-driven head turn, typewriter greeting, and pill actions are preserved. Additional content and pages extend that original experience. The exact original video is bundled locally, alongside CSS-generated concept artwork, so no external media service is required at runtime.
+
+**Preserve the original character experience when making future changes.** Do not replace the boy or his head-turn animation with an abstract graphic. The additional abstract motion study belongs in Labs and its below-the-fold teaser only.
 
 ## Run locally
 
@@ -29,7 +31,7 @@ For a locally installed Chrome instead of Playwright's downloaded browser, set `
 
 ## Pages and interactions
 
-- Home: animated sculpture, moving type strip, selected work, studio introduction, services, Labs preview, and project enquiry links.
+- Home: original A.R.I.A. boy video and cursor-driven head turn, original typewriter greeting and pill buttons, followed by selected work, studio introduction, services, Labs preview, and project enquiry links. The video also responds to horizontal touch drags while allowing vertical page scrolling.
 - Work: filterable portfolio and four individual case studies (Forma, Offscript, Noma, Signal), including strategy, identity palette, deliverables, and next-project navigation.
 - Studio: point of view, values, and four-stage process.
 - Labs: interactive CSS experiment with orbit, helix, and bloom forms, tempo and hue controls, pause, and reset.
@@ -60,6 +62,8 @@ This is a client-presentation-ready front end. Business integrations were not pr
 ## Editing
 
 - `src/config.ts`: shared email address and navigation.
+- `src/AriaHero.tsx`: preserved original hero, typewriter greeting, pointer/touch video scrubbing, copy-email feedback, and functional pill actions.
+- `public/media/aria-head.mp4`: exact original 810,684-byte character video, copied from the CloudFront URL in the initial repository; kept locally to make the original animation independent of the external host.
 - `src/data.ts`: projects, product concepts, and collaborator listings.
 - `src/pages/`: individual pages and flows.
 - `src/components.tsx`: shared artwork, buttons/links, section headings, and CTA.

@@ -66,7 +66,7 @@ test('navigation, filters, case studies, back, and recovery work', async ({
   await page.goto('/#/missing-page')
   await expect(page.getByText('404 / OUTSIDE THE FRAME')).toBeVisible()
   await page.getByRole('link', { name: 'Back to Mainframe' }).click()
-  await expect(page.locator('h1')).toContainText('Made to')
+  await expect(page.locator('h1')).toContainText('Mainframe — Meet A.R.I.A.')
 })
 
 test('shop selection persists, filters, removes, and builds an enquiry', async ({
@@ -209,3 +209,45 @@ for (const route of [
     expect(results.violations).toEqual([])
   })
 }
+
+test('original A.R.I.A. video decodes and the head follows pointer movement', async ({
+  page,
+  isMobile,
+}) => {
+  await page.goto('/')
+  const video = page.locator('.aria-video')
+  await expect(video).toHaveAttribute('src', /media\/aria-head\.mp4$/)
+  await expect
+    .poll(() =>
+      video.evaluate((element: HTMLVideoElement) => element.readyState),
+    )
+    .toBeGreaterThanOrEqual(2)
+  expect(
+    await video.evaluate((element: HTMLVideoElement) => element.duration),
+  ).toBeCloseTo(4.041667, 2)
+  if (isMobile) {
+    await page.locator('.aria-hero').dispatchEvent('pointermove', {
+      pointerType: 'touch',
+      clientX: 30,
+      clientY: 200,
+    })
+    await page.locator('.aria-hero').dispatchEvent('pointermove', {
+      pointerType: 'touch',
+      clientX: 300,
+      clientY: 200,
+    })
+  } else {
+    await page.mouse.move(100, 220)
+    await page.mouse.move(900, 220, { steps: 12 })
+  }
+  await expect
+    .poll(() =>
+      video.evaluate((element: HTMLVideoElement) => element.currentTime),
+    )
+    .toBeGreaterThan(1)
+  await expect(page.locator('.aria-message')).toContainText(
+    'Now, what are we building?',
+  )
+  await page.getByRole('link', { name: 'Pitch us an idea' }).click()
+  await expect(page).toHaveURL(/#\/contact$/)
+})

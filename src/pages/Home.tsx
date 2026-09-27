@@ -1,3 +1,4 @@
+import AriaHero from '../AriaHero'
 import { projects } from '../data'
 import {
   Sculpture,
@@ -9,64 +10,10 @@ import {
   CTA,
 } from '../components'
 
-export default function Home() {
+export default function Home({ motion }: { motion: boolean }) {
   return (
     <>
-      <section className="hero">
-        <div className="hero-topline">
-          <span>
-            <i className="status-dot" /> INDEPENDENT CREATIVE STUDIO
-          </span>
-          <span>STRATEGY → DESIGN → DIGITAL</span>
-        </div>
-        <div className="hero-content">
-          <div className="hero-copy">
-            <p className="eyebrow">GOOD TASTE. GREAT COMPANY.</p>
-            <h1>
-              Made to
-              <br />
-              move <span>you.</span>
-              <span className="hero-asterisk">✳</span>
-            </h1>
-            <p className="hero-description">
-              We turn ambitious ideas into brands,
-              <br className="desktop-break" /> experiences, and things you can’t
-              ignore.
-            </p>
-            <Link to="/work" className="button button-lime">
-              Explore our work <Arrow />
-            </Link>
-          </div>
-          <div className="hero-visual">
-            <Sculpture />
-            <div className="visual-label">
-              <span>MF—001 / LIVING FORMS</span>
-              <span>
-                ALWAYS IN MOTION <i className="status-dot" />
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="hero-bottom">
-          <span>A LITTLE STRATEGY. A LOT OF SOUL.</span>
-          <a
-            href="#selected-work"
-            onClick={(e) => {
-              e.preventDefault()
-              document.getElementById('selected-work')?.scrollIntoView({
-                behavior:
-                  matchMedia('(prefers-reduced-motion: reduce)').matches ||
-                  document.documentElement.classList.contains('motion-off')
-                    ? 'instant'
-                    : 'smooth',
-              })
-            }}
-          >
-            SCROLL TO DISCOVER <span aria-hidden="true">↓</span>
-          </a>
-          <span>SCROLL ON. GET INSPIRED.</span>
-        </div>
-      </section>
+      <AriaHero motion={motion} />
       <div className="ticker" aria-hidden="true">
         <div>
           {Array.from({ length: 4 }, (_, i) => (

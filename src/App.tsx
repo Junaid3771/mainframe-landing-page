@@ -82,7 +82,7 @@ export default function App() {
     return () => document.removeEventListener('keydown', onKey)
   }, [menu])
   let page: React.ReactNode
-  if (pathname === '/') page = <Home />
+  if (pathname === '/') page = <Home motion={motion} />
   else if (pathname === '/work') page = <Work />
   else if (pathname.startsWith('/work/')) {
     const project = projects.find((p) => pathname === `/work/${p.slug}`)
@@ -110,7 +110,7 @@ export default function App() {
         Skip to content
       </a>
       <header
-        className={`site-header ${pathname === '/' ? 'header-dark' : ''}`}
+        className={`site-header ${pathname === '/' ? 'header-aria' : ''}`}
       >
         <Link to="/" className="brand" aria-label="Mainframe home">
           Mainframe<sup>®</sup>
@@ -152,7 +152,7 @@ export default function App() {
             className="nav-contact"
             onClick={() => setMenu(false)}
           >
-            Let’s talk <Arrow />
+            {pathname === '/' ? 'Get in touch' : 'Let’s talk'} <Arrow />
           </Link>
         </nav>
       </header>
