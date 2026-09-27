@@ -1,4 +1,6 @@
 import AriaHero from '../AriaHero'
+import ObjectStudio from '../experience/ObjectStudio'
+import ScrollStory from '../experience/ScrollStory'
 import { projects } from '../data'
 import {
   Sculpture,
@@ -23,6 +25,32 @@ export default function Home({ motion }: { motion: boolean }) {
           ))}
         </div>
       </div>
+      <section className="section experience-intro">
+        <div className="experience-heading">
+          <div>
+            <p className="eyebrow">A LITTLE LESS ORDINARY / A LOT MORE ALIVE</p>
+            <h2>
+              Don’t just look.
+              <br />
+              <em>Get involved.</em>
+            </h2>
+          </div>
+          <div>
+            <p>
+              We make digital things that respond, surprise, and invite you in.
+              Go on. Turn it around. Change how it feels.
+            </p>
+            <Link to="/labs" className="text-link">
+              Explore the playground <Arrow />
+            </Link>
+          </div>
+        </div>
+        <ObjectStudio compact />
+        <p className="experience-caption">
+          <span>BRAND WORLDS / PRODUCT EXPLORERS / INTERACTIVE CAMPAIGNS</span>
+          <span>MADE TO BE PLAYED WITH ↗</span>
+        </p>
+      </section>
       <section id="selected-work" className="section work-section">
         <SectionHeading
           eyebrow="01 / SELECTED WORK"
@@ -39,6 +67,7 @@ export default function Home({ motion }: { motion: boolean }) {
           make together.
         </p>
       </section>
+      <ScrollStory />
       <section className="studio-teaser section">
         <div className="studio-symbol reveal">
           <Mark />

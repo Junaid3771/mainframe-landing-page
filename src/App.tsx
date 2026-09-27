@@ -12,9 +12,11 @@ import Openings from './pages/Openings'
 import Shop from './pages/Shop'
 import Contact from './pages/Contact'
 import Privacy from './pages/Privacy'
+import { useDepth } from './experience/useDepth'
 
 export default function App() {
   const [route, setRoute] = useState(() => location.hash.slice(1) || '/')
+  useDepth(route)
   const [menu, setMenu] = useState(false)
   const [motion, setMotion] = useStored(
     'mainframe-motion',

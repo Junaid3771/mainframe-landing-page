@@ -26,8 +26,8 @@ export const projects: Project[] = [
     challenge:
       'Move beyond the visual clichés of performance culture. Create a welcoming world that speaks to everyday progress rather than perfection.',
     approach:
-      'A flexible circular form becomes the heart of the identity. Electric green meets warm neutrals, generous typography, and language that invites everyone in.',
-    colors: ['#c7fa73', '#232620', '#efede5', '#a2b48a'],
+      'A flexible circular form becomes the heart of the identity. Expressive crimson meets warm whites, generous typography, and language that invites everyone in.',
+    colors: ['#c21d48', '#430817', '#fff1f5', '#fa7291'],
     deliverables: [
       'Brand positioning',
       'Visual identity',
@@ -48,8 +48,8 @@ export const projects: Project[] = [
     challenge:
       'Build a platform with a distinct point of view while leaving space for many different creative voices.',
     approach:
-      'Oversized typography and a vivid orange palette frame an editorial system that feels like a living cultural noticeboard. Every element can remix while remaining recognisable.',
-    colors: ['#ff693e', '#272320', '#eee9e0', '#b5b3fa'],
+      'Oversized typography and a vivid red palette frame an editorial system that feels like a living cultural noticeboard. Every element can remix while remaining recognisable.',
+    colors: ['#e92a48', '#21030a', '#fff1f5', '#bd0c30'],
     deliverables: [
       'Creative direction',
       'Identity system',
@@ -70,8 +70,8 @@ export const projects: Project[] = [
     challenge:
       'Find a distinctive expression for everyday essentials without leaning on clinical minimalism or unsupported sustainability claims.',
     approach:
-      'Earthy colours, confident lowercase typography, and soft silhouettes create an inviting visual world. The packaging concept is designed to feel at home, rather than on display.',
-    colors: ['#ddd9c2', '#696e46', '#c17e57', '#f3f0e5'],
+      'Warm burgundy tones, confident lowercase typography, and soft silhouettes create an inviting visual world. The packaging concept is designed to feel at home, rather than on display.',
+    colors: ['#750d29', '#33202a', '#f8e9e9', '#c64362'],
     deliverables: [
       'Naming concept',
       'Visual identity',
@@ -92,8 +92,8 @@ export const projects: Project[] = [
     challenge:
       'Express a complex network through a simple, memorable identity, and make the technology feel approachable.',
     approach:
-      'An orbital graphic language visualises connection. A restrained grid, luminous violet, and purposeful motion create a coherent direction across brand and product surfaces.',
-    colors: ['#b5a6ef', '#24212f', '#f3f0e7', '#7e74a7'],
+      'An orbital graphic language visualises connection. A restrained grid, luminous red, and purposeful motion create a coherent direction across brand and product surfaces.',
+    colors: ['#dc244f', '#180e15', '#fff0f4', '#720822'],
     deliverables: [
       'Product direction',
       'Digital identity',

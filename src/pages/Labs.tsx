@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { PageIntro, Sculpture, Link, Arrow, CTA } from '../components'
+import ObjectStudio from '../experience/ObjectStudio'
+import ParticleField from '../experience/ParticleField'
+import KineticType from '../experience/KineticType'
 
 export default function Labs() {
   const [mode, setMode] = useState('orbit')
@@ -9,7 +12,7 @@ export default function Labs() {
   return (
     <>
       <PageIntro
-        eyebrow="MAINFRAME LABS / EXPERIMENT 001"
+        eyebrow="MAINFRAME LABS / THE INTERACTIVE PLAYGROUND"
         title={
           <>
             Less permission.
@@ -19,6 +22,43 @@ export default function Labs() {
         }
         description="An open playground for form, motion, and happy accidents. Take the controls and make something unexpected."
       />
+      <section className="section experiments-gallery">
+        <div className="experiment-heading">
+          <span className="eyebrow">01 / FORM & MATERIAL</span>
+          <h2>Something you can feel.</h2>
+          <p>
+            Rotate a living object. Switch its material. Pull its orbit apart. A
+            small taste of an interactive product world.
+          </p>
+        </div>
+        <ObjectStudio />
+        <div className="experiment-heading">
+          <span className="eyebrow">02 / RESPONSIVE WORLDS</span>
+          <h2>A little energy goes a long way.</h2>
+          <p>
+            Move through the field, change its shape, or send a pulse. Every
+            point has a part to play.
+          </p>
+        </div>
+        <ParticleField />
+        <div className="experiment-heading">
+          <span className="eyebrow">03 / EXPRESSIVE IDENTITIES</span>
+          <h2>Give your words a pulse.</h2>
+          <p>
+            Your headline. Your rhythm. Try a few words and see how movement
+            changes their character.
+          </p>
+        </div>
+        <KineticType />
+        <div className="experiment-heading">
+          <span className="eyebrow">04 / GENERATIVE FORMS</span>
+          <h2>Find your own orbit.</h2>
+          <p>
+            Explore form, tempo, and colour in a continuously evolving
+            sculpture.
+          </p>
+        </div>
+      </section>
       <section className="section lab-section">
         <div className={`lab-canvas ${paused ? 'is-paused' : ''}`}>
           <div className="lab-canvas-label">

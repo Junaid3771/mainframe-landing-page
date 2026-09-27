@@ -34,7 +34,7 @@ For a locally installed Chrome instead of Playwright's downloaded browser, set `
 - Home: original A.R.I.A. boy video and cursor-driven head turn, original typewriter greeting and pill buttons, followed by selected work, studio introduction, services, Labs preview, and project enquiry links. The video also responds to horizontal touch drags while allowing vertical page scrolling.
 - Work: filterable portfolio and four individual case studies (Forma, Offscript, Noma, Signal), including strategy, identity palette, deliverables, and next-project navigation.
 - Studio: point of view, values, and four-stage process.
-- Labs: interactive CSS experiment with orbit, helix, and bloom forms, tempo and hue controls, pause, and reset.
+- Labs: a real-time 3D object studio (three shapes, three materials, drag rotation, keyboard rotation, expansion, pause, reset); a 700-point reactive particle field (sphere/ring/wave and pulse); editable kinetic typography (three movement styles and tempo); and the original CSS orbit/helix/bloom experiment.
 - Openings: collaborator network overview and three detailed expressions of interest.
 - Shop: three product concepts, category filters, persistent saved selections, removal, and a prepared availability enquiry.
 - Contact: required-field validation, service preselection, optional budget, generated email draft, clipboard copy, and a plain-text fallback.
@@ -46,6 +46,12 @@ Navigation uses hash URLs (for example `/#/work/forma`). Refresh, browser histor
 ## Presenting the site
 
 A useful walkthrough is Home → Work → Forma → Studio → Labs → Shop → Contact. In Labs, change the form and colour; in Shop, save an object and refresh; in Contact, prepare a brief to demonstrate the complete enquiry flow without sending an email.
+
+The extended site follows the original hero's crimson, black, and white palette. Home adds an object-studio teaser and a native-scroll three-chapter story, while portfolio cards respond with subtle pointer depth. The original hero component, styles, and video are unchanged by this visual extension.
+
+Interaction references include [Lusion](https://lusion.co/), [Lusion Labs](https://labs.lusion.co/), and [Bruno Simon](https://bruno-simon.com/). These informed the emphasis on tactile 3D and playful controls; their assets and source code are not used.
+
+Three.js loads only as the object studio approaches the viewport. Rendering pauses offscreen and in hidden tabs, pixel density is capped, and GPU resources are disposed on navigation. A CSS preview remains available when WebGL cannot initialize. The separate 3D chunk is about 137 KB gzipped; Vite's default 500 KB uncompressed chunk warning applies to that lazy chunk. Reduced motion disables automatic movement while keeping direct controls available.
 
 The footer motion control persists across visits. The operating system's reduced-motion preference always takes precedence. Menus, filters, forms, links, and experiment controls support keyboard use. Automated accessibility checks supplement, rather than replace, assistive-technology testing.
 
@@ -69,7 +75,10 @@ This is a client-presentation-ready front end. Business integrations were not pr
 - `src/components.tsx`: shared artwork, buttons/links, section headings, and CTA.
 - `src/hooks/useStored.ts`: guarded, validated local preferences.
 - `src/index.css`: design tokens, responsive layouts, CSS artwork, animation, and reduced-motion styles.
+- `src/theme.css`: crimson/black/white extension theme and interactive-section layouts; original hero rules remain in `index.css`.
+- `src/experience/`: lazy 3D scene, particle field, kinetic type, scroll story, and motion/depth hooks.
 - `tests/site.spec.ts`: browser and accessibility regression coverage.
+- `tests/experience.spec.ts`: interactive-object, particle, typography, and scroll-chapter regression coverage.
 
 Dependencies are pinned and the npm lockfile is committed. Use `npm run format` after edits.
 

@@ -120,7 +120,10 @@ test('Labs controls update the experiment and reset', async ({ page }) => {
   )
   await page.getByRole('button', { name: 'Pause motion' }).click()
   await expect(page.locator('.lab-canvas')).toHaveClass(/is-paused/)
-  await page.getByRole('button', { name: 'Reset' }).click()
+  await page
+    .locator('.lab-controls')
+    .getByRole('button', { name: 'Reset' })
+    .click()
   await expect(page.getByLabel(/TEMPO/)).toHaveValue('1')
   await expect(page.getByLabel(/COLOR SHIFT/)).toHaveValue('0')
   await expect(page.locator('.lab-canvas .sculpture')).toHaveClass(/orbit/)
